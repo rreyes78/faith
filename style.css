@@ -90,6 +90,8 @@ body {
     justify-content: center;
   }
 
+  
+
   .panel img {
     /* max-height: 90%; */
     max-width: 100%;
@@ -259,6 +261,10 @@ body {
 
     .subtext {
       font-size: 12px;
+    }
+
+    .contact-section {
+      display: block;
     }
   }
 
