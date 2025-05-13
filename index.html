@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Holy candle">
+  <title>Holy candle</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/gistesy" rel="stylesheet">
+</head>
+<style>
+  .about-section {
+  background-color: #fdfaf8;
+  padding: 40px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-align: justify;
+}
+
+.about-section p strong {
+  font-weight: 600;
+  color: #5b4636;
+}
+
+</style>
+<body>
+  
+
+  <header>
+    <div class="welcome"><a class="welcome" href="index.html">WELCOME!</a></div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="mobileMenu" class="menu">
+      
+      
+        <a class="active" href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="products.html">PRODUCTS</a>
+        <a href="contact.html">CONTACTS</a>
+        <img src="assets/cart.png" style="width: 90px; height: auto;" alt="">
+        <!-- cart  -->
+
+      </nav>
+  </header>
+
+  <div class="main">
+    <div class="panel">
+      <img src="assets/banner.png" alt="JHoly cake" />
+    </div>
+  </div>
+ 
+  <div class="best">
+   
+      <div class="div-image" style="display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: center; align-items: center; ">
+          <h3 style="color: #a27e60; text-transform: uppercase;  border-radius: 20px; justify-content: center; align-items: center;  padding: 12px 20px;">Our Services
+        </h3></div>
+        <section class="about-section">
+          <p>
+            Holy Candle Factory offered custom-made vigil glass candles like the <strong>Light of Sto. Niño de Cebu</strong> and <strong>Liwanag Candle</strong>, with options for personalization. They provided reliable nationwide delivery, accommodated bulk orders for churches and events, and welcomed walk-in customers for personalized service. With both online and in-store purchasing available, they ensured easy access to high-quality devotional candles across the Philippines.
+          </p>
+        </section>
+        
+         
+      </div>
+      <div class="holy"> <h1 >Holy Candle</h1></div>
+
+        <div class="div-image" style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center; align-items: center; ">
+            <h3 style="color: #a27e60; text-transform: uppercase;   border-radius: 20px; justify-content: center; align-items: center;  padding: 12px 20px;">Clients feedbaks
+              
+          </h3></div>
+            <div>
+              <div style="width: 100%;" class="contact-right">
+                <form  style="width: 100%; display: flex; align-items: center; justify-content: center;" >
+                  <input  style="width: 90%; padding: 20px;margin: 10px; border-radius: 6px;"  type="text" placeholder="Add Clients feedbak" required />
+                </form>
+                </div>
+            <img width="100%" src="assets/our-service.png" alt="Holy candle" />
+            </div >
+           
+        </div>
+</div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileMenu');
+      nav.classList.toggle('show');
+    }
+
+
+
+    function updateClassesBasedOnWidth() {
+    const main = document.querySelector('.main');
+    const menu = document.getElementById('mobileMenu');
+
+    if (window.innerWidth <= 768) {
+      main && main.classList.remove('main');
+      menu && menu.classList.remove('menu');
+    } else {
+      if (main && !main.classList.contains('main')) main.classList.add('main');
+      if (menu && !menu.classList.contains('menu')) menu.classList.add('menu');
+    }
+  }
+
+  // Run on initial load
+  updateClassesBasedOnWidth();
+
+  // Run whenever the window is resized
+  window.addEventListener('resize', updateClassesBasedOnWidth);
+  </script>
+
+</body>
+</html>

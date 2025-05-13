@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Holy candle">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/gistesy" rel="stylesheet">
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #fdfaf8;
+  color: #2e2e2e;
+}
+
+hr {
+      border: none;
+      border-top: 1px solid #aaa;
+      margin-bottom: 40px;
+    }
+
+.contact-section {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-left {
+  flex: 1;
+}
+
+.contact-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-right {
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  padding: 15px;
+  border: none;
+  background-color: #d7d0ca;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  width: 120px;
+  padding: 12px;
+  background-color: #d7d0ca;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  align-self: flex-end;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #bcb4ae;
+}
+
+</style>
+
+
+<body>
+  <header>
+    <div class="holy welcome"> <h1>Holy Candle</h1></div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="mobileMenu" class="menu">
+        <a href="index.html">HOME</a>
+        <a  href="about.html">ABOUT US</a>
+        <a href="products.html">PRODUCTS</a>
+        <a class="active"  href="contact.html">CONTACTS</a>
+        <img src="assets/cart.png" style="width: 90px; height: auto;" alt="">
+        <!-- cart  -->
+
+      </nav>
+  </header>
+     <div style="padding: 0 40px;"><hr></div>
+  <section class="contact-section">
+    
+    <div class="contact-left">
+      <h2>Contact</h2>
+      <p class="subtitle">Please fill out the form below to send us an email.</p>
+      <p class="message">
+        Thank you for adding your items to the cart!<br />
+        Your order is now being processed at HolyCandle Factory—expect a confirmation
+        soon as we prepare your candles with care.
+      </p>
+      <p><strong>E-mail:</strong><br />holycandle@gmail.com</p>
+      <p><strong>CONTACT NO.</strong></p>
+      <p>424-9499 or 09324720039</p>
+    </div>
+
+    <div class="contact-right">
+      <form>
+        <input type="text" placeholder="NAME" required />
+        <input type="email" placeholder="E-MAIL" required />
+        <input type="text" placeholder="SUBJECT" />
+        <textarea placeholder="MESSAGE" rows="6"></textarea>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </section>
+</body>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileMenu');
+    nav.classList.toggle('show');
+  }
+
+
+
+  function updateClassesBasedOnWidth() {
+  const main = document.querySelector('.main');
+  const menu = document.getElementById('mobileMenu');
+
+  if (window.innerWidth <= 768) {
+    main && main.classList.remove('main');
+    menu && menu.classList.remove('menu');
+  } else {
+    if (main && !main.classList.contains('main')) main.classList.add('main');
+    if (menu && !menu.classList.contains('menu')) menu.classList.add('menu');
+  }
+}
+
+// Run on initial load
+updateClassesBasedOnWidth();
+
+// Run whenever the window is resized
+window.addEventListener('resize', updateClassesBasedOnWidth);
+</script>
+</html>
