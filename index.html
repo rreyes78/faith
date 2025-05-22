@@ -26,6 +26,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/gistesy" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
+    
   </head>
   
 <style>
@@ -51,105 +59,105 @@
 
 </style>
 <body>
-  
+ 
 
-  <header>
-    <div class="welcome"><a class="welcome" href="index.html">WELCOME!</a></div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav id="mobileMenu" class="menu">
-      
-      
-        <a class="active" href="index.html">HOME</a>
-        <a href="about.html">ABOUT US</a>
-        <a href="products.html">PRODUCTS</a>
-        <a href="contact.html">CONTACTS</a>
-        <div style="position: relative; display: inline-block;">
-          <img src="assets/cart.png" style="width: 90px; height: auto;" alt="Cart">
-          <span id="cart-count" style="
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: red;
-            color: white;
-            border-radius: 50%;
-            padding: 4px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block
-            ;
-          ">0</span>
+  <button class="cart-toggle" id="cartToggleBtn">
+    <img src="assets/cart.png" style="width: 50px; height: auto;" alt="Cart">
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+
+  <load src="header.html"></load>
+  <load src="main.html"></load>
+
+  <div class="billing-container" id="billingContainer">
+    <div class="billing-card" style="padding-top: 5rem;">
+      <h6>Shopping cart</h6>
+      <div style="
+      height: 360px; 
+      min-height: 360px; 
+      overflow: auto;"
+      >
+        <div id="billing-items"></div>
+      </div>
+
+      <hr />
+      <div class="row"><p>Subtotal</p><p id="subtotal">₱0.00</p></div>
+      <div class="row"><p>Discount</p><p id="discount">-₱0.00</p></div>
+      <div class="row"><p>Tax</p><p>+₱1.99</p></div>
+      <hr />
+      <div class="" style="display: flex; justify-content: right; gap: 12px; align-items: center;">
+        <div>
+          <p>Total</p>
+          <p id="total">₱0.00</p>
         </div>
-        <!-- cart  -->
+        <div id="mobileMenu">
+          <a class="nav-links" id="cartToggleBtn2" onclick="toggleMenu(this, 'checkout.html')" class="" style="background-color: #5b4636 !important; color: white; border-radius: 6px; padding: 20px;">CHECK OUT</a></div>
+        </div>
+        
+        
 
-      </nav>
-  </header>
+      <!-- <h6 class="mt-4">Payment Method</h6>
+      <div class="payment-methods" id="paymentMethods">
+        <button data-method="debit"><i class="fa-solid fa-money-check-dollar"></i><div>Debit Card</div></button>
+        <button data-method="credit"><i class="fa-regular fa-credit-card"></i><div>Credit Card</div></button>
+      </div> -->
 
-  <div class="main">
-    <div class="panel">
-      <img src="assets/banner.png" alt="JHoly cake" />
+      
     </div>
   </div>
- 
-  <div class="best">
-   
-      <div class="div-image" style="display: flex; flex-direction: column;">
-        <div style="display: flex; justify-content: center; align-items: center; ">
-          <h3 style="color: #a27e60; text-transform: uppercase;  border-radius: 20px; justify-content: center; align-items: center;  padding: 12px 20px;">Our Services
-        </h3></div>
-        <section class="about-section">
-          <p>
-            Holy Candle Factory offered custom-made vigil glass candles like the <strong>Light of Sto. Niño de Cebu</strong> and <strong>Liwanag Candle</strong>, with options for personalization. They provided reliable nationwide delivery, accommodated bulk orders for churches and events, and welcomed walk-in customers for personalized service. With both online and in-store purchasing available, they ensured easy access to high-quality devotional candles across the Philippines.
-          </p>
-        </section>
-        
-         
-      </div>
-      <div class="holy"> <h1 >Holy Candle</h1></div>
 
-        <div class="div-image" style="display: flex; flex-direction: column;">
-          <div style="display: flex; justify-content: center; align-items: center; ">
-            <h3 style="color: #a27e60; text-transform: uppercase;   border-radius: 20px; justify-content: center; align-items: center;  padding: 12px 20px;">Clients feedbacks
-              
-          </h3></div>
-            <div>
-              <div style="width: 100%;" class="contact-right">
-                <form  style="width: 100%; display: flex; align-items: center; justify-content: center;" >
-                  <input  style="width: 90%; padding: 20px;margin: 10px; border-radius: 6px;"  type="text" placeholder="Add Clients feedback" required />
-                </form>
-                </div>
-            <img width="100%" src="assets/our-service.png" alt="Holy candle" />
-            </div >
-           
-        </div>
+  <!-- Loading overlay -->
+<div class="checkout-loading-overlay" id="checkout-loading">
+  <div>
+    <div class="checkout-spinner"></div>
+    <div>Sorry, ordering online is unavailable</div>
+    <button onclick="hideLoading()" class="checkout-close-btn">Close</button>
+  </div>
 </div>
+
+
+<div id="app"></div>
 
   <script>
     function toggleMenu() {
       const nav = document.getElementById('mobileMenu');
+      
       nav.classList.toggle('show');
     }
 
 
-
-    function updateClassesBasedOnWidth() {
-    const main = document.querySelector('.main');
-    const menu = document.getElementById('mobileMenu');
-
-    if (window.innerWidth <= 768) {
-      main && main.classList.remove('main');
-      menu && menu.classList.remove('menu');
-    } else {
-      if (main && !main.classList.contains('main')) main.classList.add('main');
-      if (menu && !menu.classList.contains('menu')) menu.classList.add('menu');
-    }
+    function showLoading() {
+    document.getElementById('checkout-loading').style.display = 'flex';
   }
 
+  function hideLoading() {
+    document.getElementById('checkout-loading').style.display = 'none';
+  }
+
+
+  //   function updateClassesBasedOnWidth() {
+  //   const main = document.querySelector('.main');
+  //   const menu = document.getElementById('mobileMenu');
+
+  //   if (window.innerWidth <= 768) {
+  //     main && main.classList.remove('main');
+  //     menu && menu.classList.remove('menu');
+  //   } else {
+  //     if (main && !main.classList.contains('main')) main.classList.add('main');
+  //     if (menu && !menu.classList.contains('menu')) menu.classList.add('menu');
+  //   }
+  // }
+
   // Run on initial load
-  updateClassesBasedOnWidth();
+  // updateClassesBasedOnWidth();
 
   // Run whenever the window is resized
-  window.addEventListener('resize', updateClassesBasedOnWidth);
+  // window.addEventListener('resize', updateClassesBasedOnWidth);
+
   </script>
+
+<script src="cart.js"></script>
 
 </body>
 </html>

@@ -1,128 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Holy candle">
-  <title>CEO Section</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/gistesy" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<style>
-    body {
-      /* font-family: 'Open Sans', sans-serif; */
-      margin: 0;
-      padding: 0;
-      background-color: #f8f8f8;
-    }
 
-   
 
-    .main {
-        display: block;
-        justify-content: center;
-        align-items: center;
-      max-width: 100%;
-      margin: 0 40px;
-      padding: 0 20px;
-      /* margin: 20px; */
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #aaa;
-      margin-bottom: 40px;
-    }
-
-    .ceo-section {
-        padding: 0 20px;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-    }
-
-    .ceo-image {
-      flex: 1 1 300px;
-    }
-
-    .ceo-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .ceo-details {
-      flex: 2 1 400px;
-    }
-
-    .ceo-details h4 {
-        font-family: "Montserrat", sans-serif;
-       
-      margin: 0;
-      font-weight: normal;
-      color: #444;
-    }
-
-    .ceo-details h2 {
-        font-family: "Montserrat", sans-serif;
-      margin: 5px 0 15px;
-      font-size: 28px;
-      font-weight: 700;
-      color: #222;
-    }
-
-    .ceo-details p {
-        font-family: "Poppins", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #333;
-      text-align: justify;
-    }
-
-    @media (max-width: 768px) {
-      .ceo-section {
-        flex-direction: column;
-      }
-    }
-  </style>
-<body>
-  <header>
-    <div class="holy welcome"> <h1>Holy Candle</h1></div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav id="mobileMenu" class="menu">
-        <a href="index.html">HOME</a>
-        <a class="active"  href="about.html">ABOUT US</a>
-        <a href="products.html">PRODUCTS</a>
-        <a href="contact.html">CONTACTS</a>
-        <div style="position: relative; display: inline-block;">
-          <img src="assets/cart.png" style="width: 90px; height: auto;" alt="Cart">
-          <span id="cart-count" style="
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: red;
-            color: white;
-            border-radius: 50%;
-            padding: 4px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block
-            ;
-          ">0</span>
-        </div>
-        <!-- cart  -->
-
-      </nav>
-  </header>
- 
-  <div class="main">
-    <hr>
+<main id="main">
+  <div class="about-main about-body">
+    <hr class=".about-hr ">
     <div class="ceo-section">
       <div class="ceo-image">
         <img src="assets/cancle.png" alt="CEO Candles">
@@ -139,7 +19,7 @@
 
 
 
-  <script>
+  <!-- <script>
     function toggleMenu() {
       const nav = document.getElementById('mobileMenu');
       nav.classList.toggle('show');
@@ -165,7 +45,7 @@
 
   // Run whenever the window is resized
   window.addEventListener('resize', updateClassesBasedOnWidth);
-  </script>
+  </script> -->
 
-</body>
-</html>
+</main>
+<!-- </html> -->

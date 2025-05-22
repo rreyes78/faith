@@ -1,110 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Holy candle">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/gistesy" rel="stylesheet">
-</head>
-<style>
-    .products-section {
-    text-align: center;
-    /* padding: 60px 40px; */
-    background-color: #fdfaf8;
-    }
 
-    .products-section h2 {
-    font-size: 2.5rem;
-    font-style: italic;
-    /* border-bottom: 2px solid #333; */
-    display: inline-block;
-    padding-bottom: 10px;
-    margin-bottom: 40px;
-    }
-
-    .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    }
-
-    .product-card {
-    background-color: white;
-    border: 1px solid #eee;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .product-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 15px;
-    }
-
-    .product-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    }
-
-    .price {
-    font-weight: bold;
-    margin-bottom: 15px;
-    }
-
-    .product-card button {
-    background-color: #d7d0ca;
-    padding: 10px 20px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    }
-
-    .product-card button:hover {
-    background-color: #bcb4ae;
-    }
-
-</style>
-
-
-<body>
-  <header>
-    <div class="holy welcome"> <h1>Holy Candle</h1></div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav id="mobileMenu" class="menu">
-        <a href="index.html">HOME</a>
-        <a  href="about.html">ABOUT US</a>
-        <a class="active"  href="products.html">PRODUCTS</a>
-        <a  href="contact.html">CONTACTS</a>
-        <div style="position: relative; display: inline-block;">
-          <img src="assets/cart.png" style="width: 90px; height: auto;" alt="Cart">
-          <span id="cart-count" style="
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: red;
-            color: white;
-            border-radius: 50%;
-            padding: 4px 8px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block
-            ;
-          ">0</span>
-        </div>
-        <!-- cart  -->
-
-      </nav>
-  </header>
+<main id="main">
      <div style="padding: 0 40px;"><hr></div>
      <section class="products-section">
         <h2>PRODUCTS</h2>
@@ -115,17 +10,33 @@
           <!-- Product 1 -->
           <div class="product-card">
             <img src="assets/offering 1.png" alt="Offering Light Thick" />
-            <h3>Offering Light (Thick)</h3>
+            <h3>Offering Light (Thick) per sack 
+            </h3>
             <p class="price">₱2,000</p>
-            <button>ADD TO CART</button>
+            <button onclick='openModal({
+              name: "Offering Light (Thick)", 
+              category: "", 
+              price: 2000, 
+              image: "assets/offering 1.png"
+            })'
+            >ADD TO CART</button>
           </div>
           
           <!-- Product 2 -->
           <div class="product-card">
             <img src="assets/offering.png" alt="Offering Light Thin" />
-            <h3>Offering Light (Thin)</h3>
+            <h3>Offering Light (Thin) per sack 
+            </h3>
             <p class="price">₱1,200</p>
-            <button>ADD TO CART</button>
+            <button
+            onclick='openModal({
+              name: "Offering Light (Thin)", 
+              category: "", 
+              price: 1200, 
+              image: "assets/offering.png"
+            })'
+            
+            >ADD TO CART</button>
           </div>
           
           <!-- Product 3 -->
@@ -133,7 +44,15 @@
             <img src="assets/vigil.png" alt="Vigil Glass" />
             <h3>Vigil Glass</h3>
             <p class="price">₱40.00</p>
-            <button>ADD TO CART</button>
+            <button
+            onclick='openModal({
+              name: "Vigil Glass", 
+              category: "", 
+              price: 40, 
+              image: "assets/vigil.png"
+            })'
+            
+            >ADD TO CART</button>
           </div>
       
           <!-- Product 4 -->
@@ -141,12 +60,32 @@
             <img src="assets/liwanag.png" alt="Liwanag 10 pcs" />
             <h3>Liwanag ( 10 pcs )</h3>
             <p class="price">₱65.00</p>
-            <button>ADD TO CART</button>
+            <button
+            onclick='openModal({
+              name: "Liwanag ( 10 pcs )", 
+              category: "", 
+              price: 65, 
+              image: "assets/liwanag.png"
+            })'
+            >ADD TO CART</button>
           </div>
         </div>
       </section>
+        <!-- Quantity Modal -->
+        <div id="quantityModal" class="modal" style="display: none;">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Enter Quantity</h2>
+            <input type="number" id="quantityInput" min="1" value="1" />
+            <button onclick="confirmQuantity()">Add to Cart</button>
+          </div>
+        </div>
+        
       
-</body>
+    </main>
+
+
+<!-- 
 <script>
 
     let cartCount = 0;
@@ -188,4 +127,4 @@
   // Run whenever the window is resized
   window.addEventListener('resize', updateClassesBasedOnWidth);
   </script>
-</html>
+</html> -->

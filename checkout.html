@@ -1,0 +1,40 @@
+<main id="main">
+    <div class="checkout-container">
+      <div class="checkout-left">
+        <div class="checkout-title">CUSTOMERS CHECK OUT DETAILS:</div>
+        <div class="checkout-subtitle">Please fill out the form below to send us your order.</div>
+        <div class="checkout-message">
+          Thank you for adding your items to the cart! Your order is now being processed at HolyCandle Factory—expect a confirmation soon as we prepare your candles with care.
+        </div>
+      </div>
+
+      <div class="checkout-right">
+        <input class="checkout-input" type="text" placeholder="NAME" />
+        <textarea class="checkout-address" rows="4" placeholder="ADDRESS:"></textarea>
+
+        <div class="checkout-note">
+          <b>NOTE:</b> DELIVERY IS ONLY AVAILABLE FOR A MINIMUM ORDER OF ₱5,000.
+        </div>
+
+        <div class="checkout-options">
+          <div class="checkout-options-title">DELIVERY OPTIONS:</div>
+          <div class="checkout-radio-group">
+            <label class="checkout-radio-label">
+              <input type="radio" name="delivery" value="pickup" /> PICK UP
+            </label>
+            <label class="checkout-radio-label">
+              <input type="radio" name="delivery" value="delivery" /> DELIVERY
+            </label>
+          </div>
+        </div>
+         <!-- <div>
+          <p>Total</p>
+          <p id="total">₱0.00</p>
+        </div> -->
+
+        <div style="display: flex; justify-content: right;">
+          <button class="checkout-button" onclick="showLoading()">PLACE ORDER</button>
+        </div>
+      </div>
+    </div>
+  </main>
